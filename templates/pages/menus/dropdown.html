@@ -1,0 +1,15 @@
+{% load i18n pages_tags %}
+{% spaceless %}
+    {% if page_branch_in_menu %}
+
+        <ul class="mbr-navbar__items mbr-navbar__items--right mbr-buttons mbr-buttons--freeze mbr-buttons--right btn-decorator mbr-buttons--active">
+            <li class="mbr-navbar__item"><a class="mbr-buttons__link btn text-white"
+                                            href="{% url "home" %}">{% trans "Home" %}</a></li>
+            {% for page in page_branch %}
+                <li class="mbr-navbar__item"><a class="mbr-buttons__link btn text-white"
+                                            href="{{ page.get_absolute_url }}">{{ page.title }}</a></li>
+            {% endfor %}
+        </ul>
+
+    {% endif %}
+{% endspaceless %}
