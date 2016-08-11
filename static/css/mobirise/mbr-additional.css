@@ -51,8 +51,11 @@
     font-family: "宋体", "WenQuanYi Micro Hei", sans-serif;
     color: #1b6592;
 }
-
-#article-content p {
+#article-list H2 a {
+    font-family: "宋体", sans-serif;
+    text-decoration: none;
+}
+#article-content p, #article-list p {
     font-family: "Microsoft YaHei", sans-serif;
 }
 
