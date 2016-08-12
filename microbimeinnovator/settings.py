@@ -85,6 +85,11 @@ BLOG_USE_FEATURED_IMAGE = True
 # INSTALLED_APPS setting.
 USE_MODELTRANSLATION = False
 
+# Device handling
+DEVICE_USER_AGENTS = (
+    ("mobile", ("Android", "BlackBerry", "iPhone")),
+    ("desktop", ("Windows", "Macintosh", "Linux")),
+)
 
 ########################
 # MAIN DJANGO SETTINGS #
