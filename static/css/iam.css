@@ -7,3 +7,17 @@ h2 img, p img {
   max-width:100%;
   height:auto;
 }
+.form-control {
+  position: fixed;
+  top: 20px;
+  right:10px;
+  padding: 0;
+  width:78px;
+  height: 20px;
+  background: rgba(255,255,255,0.1);
+  border:0;
+  color: white;
+}
+.form-control option {
+  color: black;
+}

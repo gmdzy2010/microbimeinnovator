@@ -83,7 +83,7 @@ BLOG_USE_FEATURED_IMAGE = True
 
 # If True, the django-modeltranslation will be added to the
 # INSTALLED_APPS setting.
-USE_MODELTRANSLATION = False
+USE_MODELTRANSLATION = True
 
 # Device handling
 DEVICE_USER_AGENTS = (
@@ -114,7 +114,7 @@ DATETIME_FORMAT = '  Y-m-d'
 
 # Language code for this installation. All choices can be found here:
 # http://www.i18nguy.com/unicode/language-identifiers.html
-LANGUAGE_CODE = "zh-hans"
+LANGUAGE_CODE = "en"
 
 # Supported languages
 LANGUAGES = (
@@ -253,6 +253,7 @@ INSTALLED_APPS = (
     "mezzanine.blog",
     "mezzanine.forms",
     "mezzanine.galleries",
+    "modeltranslation",
     # "mezzanine.twitter",
     # "mezzanine.accounts",
     # "mezzanine.mobile",
@@ -266,7 +267,7 @@ MIDDLEWARE_CLASSES = (
 
     'django.contrib.sessions.middleware.SessionMiddleware',
     # Uncomment if using internationalisation or localisation
-    # 'django.middleware.locale.LocaleMiddleware',
+    'django.middleware.locale.LocaleMiddleware',
     'django.middleware.common.CommonMiddleware',
     'django.middleware.csrf.CsrfViewMiddleware',
     'django.contrib.auth.middleware.AuthenticationMiddleware',

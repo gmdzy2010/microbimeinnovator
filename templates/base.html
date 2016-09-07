@@ -52,7 +52,6 @@
 </head>
 
 <body>
-
 <section
         class="mbr-navbar mbr-navbar--freeze mbr-navbar--absolute mbr-navbar--transparent mbr-navbar--sticky mbr-navbar--auto-collapse"
         id="site-nav">
@@ -71,11 +70,13 @@
                 </div>
                 <div class="mbr-navbar__hamburger mbr-hamburger text-white"><span class="mbr-hamburger__line"></span>
                 </div>
+                {% include "includes/language_selector.html" %}
                 <div class="mbr-navbar__column mbr-navbar__menu">
                     <nav class="mbr-navbar__menu-box mbr-navbar__menu-box--inline-right">
                         <div class="mbr-navbar__column">
                             {% block navbar_dropdown_menu %}{% page_menu "pages/menus/dropdown.html" %}{% endblock %}
                         </div>
+
                     </nav>
                 </div>
             </div>

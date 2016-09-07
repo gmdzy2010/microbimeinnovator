@@ -1443,7 +1443,7 @@ html {
   color: #fff;
   position: relative;
 }
-.mbr-hero__text {
+.mbr-hero__text, .mbr-hero__text_zh {
   font-size: 46px;
   font-weight: bold;
   left: -2px;
@@ -1454,7 +1454,7 @@ html {
   position: relative;
   top: 8px;
 }
-.mbr-hero__subtext {
+.mbr-hero__subtext, .mbr-hero__subtext_zh {
   font-size: 21px;
   line-height: 29px;
   margin: -32px 0 3px 0;
