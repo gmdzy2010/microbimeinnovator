@@ -62,33 +62,6 @@
         <div class="mbr-section__container container mbr-section__container--first">
             <div class="mbr-header mbr-header--wysiwyg row">
                 <div class="col-sm-8 col-sm-offset-2">
-                    {% if tag or category or year or month or author %}
-                        {% block blog_post_list_filterinfo %}
-                            <p>
-                            {% if tag %}
-                                {% trans "Viewing posts tagged" %} {{ tag }}
-                                {% else %}{% if category %}
-                                    {% trans "Viewing posts for the category" %} {{ category }}
-                                    {% else %}{% if year or month %}
-                                        {% trans "Viewing posts from" %} {% if month %}{{ month }}, {% endif %}
-                                        {{ year }}
-                                        {% else %}{% if author %}
-                                            {% trans "Viewing posts by" %}
-                                            {{ author.get_full_name|default:author.username }}
-                                        {% endif %}{% endif %}{% endif %}{% endif %}
-                        {% endblock %}
-                    </p>
-                    {% else %}
-                        {% if page %}
-                            {% block blog_post_list_pagecontent %}
-                                {% if page.get_content_model.content %}
-                                    {% editable page.get_content_model.content %}
-                                        {{ page.get_content_model.content|richtext_filters|safe }}
-                                    {% endeditable %}
-                                {% endif %}
-                            {% endblock %}
-                        {% endif %}
-                    {% endif %}
 
                     {% for blog_post in blog_posts.object_list %}
                         {% block blog_post_list_post_title %}
@@ -105,15 +78,7 @@
                                     {% with blog_post.user as author %}
                                         <a href="{% url "blog_post_list_author" author %}">{{ author.get_full_name|default:author.username }}</a>
                                     {% endwith %}
-                                    {% with blog_post.categories.all as categories %}
-                                        {% if categories %}
-                                            {% trans "in" %}
-                                            {% for category in categories %}
-                                                <a href="{% url "blog_post_list_category" category.slug %}">{{ category }}</a>
-                                                {% if not forloop.last %}, {% endif %}
-                                            {% endfor %}
-                                        {% endif %}
-                                    {% endwith %}
+
                                     {% blocktrans with sometime=blog_post.publish_date|timesince %}{{ sometime }}
                                         ago{% endblocktrans %}
                                 </p>

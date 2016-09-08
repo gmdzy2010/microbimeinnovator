@@ -21,3 +21,6 @@ h2 img, p img {
 .form-control option {
   color: black;
 }
+#language_selector_form input {
+  margin-top: -1000px;
+}
