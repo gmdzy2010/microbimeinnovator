@@ -24,3 +24,6 @@ h2 img, p img {
 #language_selector_form input {
   margin-top: -1000px;
 }
+#baidu {
+  display: none;
+}
